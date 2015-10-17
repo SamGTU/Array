@@ -16,7 +16,8 @@ public class Main {
 
         ma.removeByIndex(1);
 
-        System.out.println(ma.start_array[1]);
+        ma.inputArray();
+        ma.printArray();
 
 
 

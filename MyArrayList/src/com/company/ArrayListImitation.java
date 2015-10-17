@@ -1,6 +1,9 @@
 package com.company;
 
 
+import java.awt.*;
+import java.util.Scanner;
+
 /**
  * Created by Victore on 17.10.2015.
  */
@@ -44,7 +47,23 @@ public class ArrayListImitation {
         }
         this.start_array = final_array;
     }
-    
+
+    void printArray(){
+        for (int i = 0;i < start_array.length; i++ ){
+            System.out.print(start_array[i]+ " ");
+        }
+
+    }
+
+    void inputArray(){
+        Scanner input  = new Scanner(System.in);
+        int size = input.nextInt();
+        int[] final_array = new int[size];
+        for (int i = 0; i < size; i ++){
+            final_array[i] = input.nextInt();
+        }
+        this.start_array = final_array;
+    }
 
 
 
