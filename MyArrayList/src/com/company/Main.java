@@ -9,5 +9,20 @@ public class Main {
         ma.inseard(2, 1);
         ma.add(9);
         System.out.println(ma.start_array[1]);
+
+        int z = ma.getByIndex(2);
+
+        System.out.println(z);
+
+        ma.removeByIndex(1);
+
+        System.out.println(ma.start_array[1]);
+
+
+
+
+
+
     }
+
 }
