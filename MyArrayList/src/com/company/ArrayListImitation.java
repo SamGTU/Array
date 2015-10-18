@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 
 public class ArrayListImitation {
-    protected int[] start_array = new int[0];
+    private int[] start_array = new int[0];
 
     void add(int elem) {
         int[] final_array = new int[start_array.length + 1];
@@ -79,6 +79,10 @@ public class ArrayListImitation {
             }
         }
         this.start_array = final_array;
+    }
+
+    int gerLength(){
+        return this.start_array.length;
     }
 }
 

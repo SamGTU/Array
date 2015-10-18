@@ -5,7 +5,7 @@ package com.company;
  */
 public class MyList {
     private int[] arr;
-    //private int index;
+    //private int lastIndex;
     private int lengthArray;
 
     //конструктор
@@ -15,7 +15,7 @@ public class MyList {
 
     //добавление элемента в конец массива
     void addElem(int elem){
-        reArray();
+        reArray(1);
         this.arr[this.lengthArray - 1] = elem;
     }
 
@@ -37,15 +37,17 @@ public class MyList {
         return this.arr[index];
     }
 
-    //void delElemIndex(int index){}
+    void delElemIndex(int index){
+
+    }
 
     //void delElem(int elem){}
 
     //void addElemBefore(int index){}
 
-    //увелечение длинны массива на 1
-    void reArray(){
-        int[] buf = new int[this.lengthArray + 1];
+    //увелечение длинны массива на num
+    void reArray(int num){
+        int[] buf = new int[this.lengthArray + num];
         for (int i = 0; i < this.lengthArray ; i++) {
             buf[i] = this.arr[i];
         }
