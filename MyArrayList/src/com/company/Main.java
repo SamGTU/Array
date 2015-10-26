@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.*;
+import java.util.Objects;
 
 public class Main {
 
@@ -19,7 +20,8 @@ public class Main {
                 case "add": {
                     System.out.print("Введите число: ");
                     cmd = reader.readLine();
-                    ma.add(Integer.parseInt(cmd));
+                    Object a = cmd;
+                    ma.add((Objects) a);
                     break;
                 }
                 case "print": {
