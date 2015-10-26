@@ -1,37 +1,50 @@
 package com.company;
 
 import java.io.*;
-import java.util.Objects;
+
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
 
+        int index;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ArrayListImitation ma = new ArrayListImitation();
-        String cmd = "";
+
 
         while(true){
 
             System.out.print("Введите команду: ");
-            cmd = reader.readLine();
+            String cmd = reader.readLine();
 
             switch (cmd) {
                 case "add": {
-                    System.out.print("Введите число: ");
-                    cmd = reader.readLine();
-                    Object a = cmd;
-                    ma.add((Objects) a);
+                    System.out.print("Введите : ");
+                    Object data = reader.readLine();
+                    ma.add(data);
+                    break;
+                }
+                case "inseard": {
+                    System.out.print("Введите данные: ");
+                    Object data = reader.readLine();
+                    System.out.print("Введите индекс: ");
+                    index = Integer.parseInt(reader.readLine());
+                    ma.inseard(data,index);
                     break;
                 }
                 case "print": {
                     System.out.print("Текущий массив: ");
-                    for (int i = 0; i < ma.gerLength(); i++) {
-                        System.out.print(ma.getByIndex(i) + " ");
-                    }
+                    ma.printArray();
                     System.out.println("");
                     break;
                 }
+                case "get": {
+                    System.out.println("Введите индекс: ");
+                    index = Integer.parseInt(reader.readLine());
+                    System.out.println("Эллемент массива: " + ma.getByIndex(index));
+                    break;
+                }
+
                 case "exit": System.exit(0);
 
                 default:
