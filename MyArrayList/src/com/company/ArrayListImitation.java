@@ -1,41 +1,56 @@
 package com.company;
 
 
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  * Created by Victore on 17.10.2015.
  */
 
-public class ArrayListImitation {
-    private Object[] start_array = new Object[0];
-    //private int size = start_array.length;
+public class ArrayListImitation  {
+    private Object[] start_array;
 
+    private int i;
 
-
-    void add(Object elem) {
-        Object[] final_array = new Object[start_array.length + 1];
-        for (int i = 0; i < start_array.length; i++) {
-            final_array[i] = start_array[i];
-        }
-        final_array[final_array.length - 1] = elem;
-        this.start_array = final_array;
+    public ArrayListImitation(){
+        start_array = new Object[5];
     }
 
-    void inseard(Object elem, int index) {
-        Object[] final_array;
-        if (start_array.length <= index){
-            final_array = new Object[index + 1];
-        }else{
-            final_array = new Object[start_array.length + 1];
+    public void add(Object data) {
+        Object[] buffer_array = Arrays.copyOf(start_array,start_array.length);
+        if (start_array[start_array.length - 1] != null ){
+            buffer_array = Arrays.copyOf(start_array,start_array.length * 2);
+
         }
-        for (int i = 0; i < start_array.length; i++) {
-            if (i < index) {
-                final_array[i] = start_array[i];
-            } else {
-                final_array[i] = start_array[i + 1];
+
+        for (i = 0;i < buffer_array.length;i ++){
+            if (buffer_array[i] == null){
+                buffer_array[i] = data;
+                break;
             }
         }
-        final_array[index] = elem;
-        this.start_array = final_array;
+        this.start_array = buffer_array;
+
+    }
+
+    public void inseard(Object data, int index) {
+        Object[] buffer_array = Arrays.copyOf(start_array,start_array.length);
+        if (start_array[start_array.length - 1] != null && start_array.length  < index ){
+            buffer_array = Arrays.copyOf(start_array,start_array.length * 2);
+
+        }
+
+        for (int i = 0; i < start_array.length - 1; i++)  {
+            if (i < index) {
+                buffer_array[i] = start_array[i];
+            } else {
+                buffer_array[i + 1] = start_array[i];
+            }
+        }
+        buffer_array[index] = data;
+        this.start_array = buffer_array;
+        System.out.println(Arrays.toString(start_array));
     }
 
     Object getByIndex(int index) {

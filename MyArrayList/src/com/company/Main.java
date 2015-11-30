@@ -1,13 +1,14 @@
 package com.company;
 
+import javax.swing.*;
 import java.io.*;
 
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException{
 
-        int index;
+       int index;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ArrayListImitation ma = new ArrayListImitation();
 
@@ -22,6 +23,7 @@ public class Main {
                     System.out.print("Введите : ");
                     Object data = reader.readLine();
                     ma.add(data);
+                    ma.printArray();
                     break;
                 }
                 case "inseard": {
@@ -53,3 +55,4 @@ public class Main {
         }
     }
 }
+
